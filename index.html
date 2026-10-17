@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Madeleine — кондитерская с доставкой по Москве</title>
+  <meta name="description" content="Чизкейки, торты и пирожные ручной работы. Собираем заказ под ваш повод и привозим в день обращения. Бесплатная доставка по Москве.">
+  <meta name="theme-color" content="#F6F1EB">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Madeleine">
+  <meta property="og:title" content="Madeleine — кондитерская с доставкой по Москве">
+  <meta property="og:description" content="Чизкейки, торты и пирожные ручной работы. Собираем заказ под ваш повод и привозим в день обращения. Бесплатная доставка по Москве.">
+  <meta property="og:image" content="assets/photos/og-template.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F8F2E8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23A63D2F'%3Ec%3C/text%3E%3C/svg%3E">
+
+  <script src="config.js"></script>
+  <script>
+    /* Красим интерфейс до первой отрисовки — без вспышки чужой темы. */
+    (function () {
+      var c = window.SITE_CONFIG;
+      if (!c || !c.theme) return;
+      var r = document.documentElement;
+      Object.keys(c.theme).forEach(function (k) {
+        r.style.setProperty('--' + k.replace(/[A-Z]/g, function (m) { return '-' + m.toLowerCase(); }), c.theme[k]);
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Madeleine",
+  "description": "Чизкейки, торты и пирожные ручной работы. Собираем заказ под ваш повод и привозим в день обращения. Бесплатная доставка по Москве.",
+  "telephone": "+79990000000",
+  "priceRange": "850–4 500 ₽",
+  "servesCuisine": "Десерты, торты, чизкейки",
+  "sameAs": [
+    "https://t.me/madeleine_demo",
+    "https://t.me/madeleine_demo"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Москва",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 09:00-21:00",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Десерты",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "position": 1,
+        "price": 2400,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Чизкейк «Сан-Себастьян»",
+          "description": "Баскский чизкейк: карамельная корочка и нежная кремовая середина."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 2,
+        "price": 2500,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Чизкейк «Вишнёвый»",
+          "description": "Сливочный чизкейк на песочной основе с густым вишнёвым соусом."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 3,
+        "price": 2700,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Чизкейк «Фисташковый»",
+          "description": "Фисташковая паста, сливочный сыр и тонкая шоколадная основа."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 4,
+        "price": 2600,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Брауни-чизкейк",
+          "description": "Шоколадный брауни, карамель и слой нежного сливочного чизкейка."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 5,
+        "price": 3200,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Торт «Фисташка и малина»",
+          "description": "Фисташковый бисквит, малиновая начинка и сливочный крем."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 6,
+        "price": 3400,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Торт «Рикотта с грушей»",
+          "description": "Лёгкий торт на рикотте с сочной грушей и тонкой пудрой."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 7,
+        "price": 3700,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Торт «Лесные ягоды»",
+          "description": "Песочная основа, сливочный крем и свежие лесные ягоды."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 8,
+        "price": 1400,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Профитроли с фисташкой",
+          "description": "12 профитролей с фисташковым и шоколадным кремом в коробке."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 9,
+        "price": 850,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Тарталетки с малиной",
+          "description": "Хрустящая песочная основа, сливочный крем и крупная малина."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 10,
+        "price": 2800,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Набор «Мини-праздник»",
+          "description": "Тарталетки и профитроли в подарочной коробке — удобно взять с собой."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 11,
+        "price": 4500,
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Мега-ассорти чизкейков",
+          "description": "2 кг чизкейков разных вкусов — на большой праздник или офис."
+        }
+      }
+    ]
+  }
+}</script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Перейти к витрине</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="Madeleine — на главную">
+        <span class="logo-line1" data-bind="brand.logoLine1">cheesecake</span>
+        <span class="logo-line2" data-bind="brand.logoLine2">kazan</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#catalog">Витрина</a>
+        <a href="#how">Как заказать</a>
+        <a href="#order">Оформление</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-phone js-phone-link" href="tel:+79990000000" data-bind="contacts.phoneDisplay">+7 917 222-56-54</a>
+        <a class="header-tg js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10.5l5.5 2L10 19l3.5-4.5L19 17 21 3Z"/><path d="m8.5 12.5 6-4"/></svg>
+          <span>Telegram</span>
+        </a>
+        <button class="icon-btn" id="cartBtn" type="button" aria-label="Перейти к оформлению заказа">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l1.2 12H4.8L6 8Z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── Первый экран ────────────────────────────────────── -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-bind="hero.eyebrow">Кондитерская · Казань</p>
+          <h1 data-bind-html="hero.titleHtml">Чизкейки и торты,<br>к которым не нужен <em>повод</em></h1>
+          <p class="hero-text" data-bind="hero.text">Более 30 видов десертов. Готовим день в день и привозим бесплатно по Казани.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#catalog">
+              <span data-bind="hero.primaryCta">Выбрать десерт</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10.5l5.5 2L10 19l3.5-4.5L19 17 21 3Z"/><path d="m8.5 12.5 6-4"/></svg>
+              <span data-bind="hero.secondaryCta">Написать в Telegram</span>
+            </a>
+          </div>
+
+          <div class="hero-stats" id="heroStats"></div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <img data-bind-src="hero.image" data-bind-alt="hero.imageAlt" src="assets/photos/hero.webp" alt="Ассорти чизкейков" width="640" height="800" fetchpriority="high">
+          </div>
+
+          <div class="hero-sticker" aria-hidden="true">
+            <svg class="sticker-ring" viewBox="0 0 120 120">
+              <defs>
+                <path id="stickerPath" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/>
+              </defs>
+              <text>
+                <textPath href="#stickerPath" startOffset="0" data-bind="hero.sticker">свежая выпечка · каждый день ·</textPath>
+              </text>
+            </svg>
+            <span class="sticker-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M6 20v-7h12v7"/><path d="M8 13V9h8v4"/><path d="M12 9V5"/><path d="M12 5c0-1 .7-1.6 1.5-1.6"/></svg>
+            </span>
+          </div>
+
+          <div class="hero-badge">
+            <span class="hero-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h11v10H3z"/><path d="M14 11h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg>
+            </span>
+            <span class="hero-badge-text">
+              <strong data-bind="hero.badgeTitle">Бесплатная доставка</strong>
+              <span data-bind="hero.badgeText">по Казани · день в день</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- ── Преимущества ────────────────────────────────────── -->
+    <section class="trust" aria-label="Почему мы">
+      <div class="wrap">
+        <div class="trust-grid" id="trustGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── Витрина ─────────────────────────────────────────── -->
+    <section class="section catalog" id="catalog">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-copy">
+            <p class="eyebrow" data-bind="catalog.eyebrow">01 — Витрина</p>
+            <h2 class="section-title" data-bind="catalog.title">Выберите свой десерт</h2>
+            <p class="section-text" data-bind="catalog.text">Цены за десерт целиком или набор.</p>
+          </div>
+          <div class="filters" id="filters" role="group" aria-label="Категории десертов"></div>
+        </div>
+
+        <div class="catalog-grid" id="catalogGrid"></div>
+
+        <noscript>
+          <p class="catalog-noscript">Для выбора десертов включите JavaScript — или напишите нам в Telegram, и мы соберём заказ вручную.</p>
+        </noscript>
+
+        <p class="catalog-note">
+          <span data-bind="catalog.note">Не нашли свой вкус?</span>
+          <a class="js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener">
+            <span data-bind="catalog.noteLink">Напишите в Telegram — соберём под заказ</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Как заказать ────────────────────────────────────── -->
+    <section class="how" id="how">
+      <div class="wrap">
+        <div class="how-head">
+          <div>
+            <p class="eyebrow eyebrow--light" data-bind="steps.eyebrow">02 — Как заказать</p>
+            <h2 class="section-title" data-bind="steps.title">Три шага до десерта</h2>
+          </div>
+          <p class="how-text" data-bind="steps.text">Выберите десерты, укажите детали — и отправьте готовый заказ в Telegram.</p>
+        </div>
+        <div class="how-grid" id="stepsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── Оформление ──────────────────────────────────────── -->
+    <section class="order-section" id="order">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-copy">
+            <p class="eyebrow" data-bind="order.eyebrow">03 — Оформление</p>
+            <h2 class="section-title" data-bind="order.title">Соберите заказ</h2>
+            <p class="section-text" data-bind="order.text">Заполните форму — сайт превратит её в готовое сообщение для Telegram.</p>
+          </div>
+        </div>
+
+        <div class="order-grid">
+          <div class="order-card">
+            <div class="order-card-head">
+              <h3 data-bind="order.summaryTitle">Ваш заказ</h3>
+              <span class="order-card-count" id="cartHeadCount"></span>
+            </div>
+
+            <div id="orderItems" aria-live="polite"></div>
+
+            <div class="form-title">
+              <h3 data-bind="order.formTitle">Данные для доставки</h3>
+            </div>
+
+            <form id="orderForm" novalidate autocomplete="on">
+              <div class="form-grid">
+                <div class="field" data-field="name">
+                  <label for="name">Ваше имя <span class="req">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" maxlength="60">
+                  <span class="field-error" id="nameError"></span>
+                </div>
+
+                <div class="field" data-field="phone">
+                  <label for="phone">Телефон <span class="req">*</span></label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" maxlength="18">
+                  <span class="field-error" id="phoneError"></span>
+                </div>
+
+                <div class="field field--full" data-field="occasion">
+                  <label for="occasion">Повод</label>
+                  <select id="occasion" name="occasion"></select>
+                </div>
+
+                <div class="field" data-field="date">
+                  <label for="date">Дата доставки <span class="req">*</span></label>
+                  <input id="date" name="date" type="date">
+                  <span class="field-error" id="dateError"></span>
+                </div>
+
+                <div class="field" data-field="time">
+                  <label for="time">Удобное время <span class="req">*</span></label>
+                  <select id="time" name="time"></select>
+                  <span class="field-hint" id="timeHint"></span>
+                  <span class="field-error" id="timeError"></span>
+                </div>
+
+                <div class="field field--full" data-field="method">
+                  <label>Способ получения <span class="req">*</span></label>
+                  <div class="segmented" role="radiogroup" aria-label="Способ получения">
+                    <label>
+                      <input type="radio" name="method" value="delivery" checked>
+                      <span>Доставка</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="method" value="pickup">
+                      <span>Самовывоз</span>
+                    </label>
+                  </div>
+                  <span class="field-hint" id="pickupHint" hidden></span>
+                </div>
+
+                <div class="field field--full" data-field="address" id="addressField">
+                  <label for="address">Адрес доставки <span class="req">*</span></label>
+                  <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Улица, дом, квартира" maxlength="160">
+                  <span class="field-error" id="addressError"></span>
+                </div>
+
+                <div class="field field--full" data-field="inscription" id="inscriptionField">
+                  <label for="inscription">Надпись на торте <span class="optional">— необязательно</span></label>
+                  <input id="inscription" name="inscription" type="text" placeholder="Например: «С днём рождения, Аня!»" maxlength="80">
+                </div>
+
+                <div class="field field--full" data-field="comment">
+                  <label for="comment">Комментарий <span class="optional">— необязательно</span></label>
+                  <textarea id="comment" name="comment" rows="3" placeholder="Получатель, пожелания, сюрприз — всё, что важно знать" maxlength="500"></textarea>
+                </div>
+              </div>
+
+              <div class="consent-wrap" data-field="consent">
+                <label class="consent">
+                  <input type="checkbox" id="consent" name="consent">
+                  <span><span data-bind="order.consent">Согласен на обработку персональных данных</span> · <a href="privacy.html" target="_blank" rel="noopener">политика</a></span>
+                </label>
+                <span class="field-error" id="consentError"></span>
+              </div>
+
+              <p class="form-note">Данные никуда не отправляются, пока вы сами не откроете Telegram.</p>
+              <button type="submit" class="sr-only">Оформить заказ</button>
+            </form>
+          </div>
+
+          <aside class="summary" id="summary" aria-label="Итог заказа">
+            <div class="summary-head">
+              <div>
+                <h3 data-bind="order.summaryTitle">Ваш заказ</h3>
+                <p class="summary-count" id="summaryCount"></p>
+              </div>
+              <span class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1.2 12H4.8L6 8Z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
+              </span>
+            </div>
+
+            <div class="summary-list" id="summaryList"></div>
+
+            <div class="summary-totals">
+              <div class="summary-row"><span>Вес</span><b id="summaryWeight">—</b></div>
+              <div class="summary-row"><span>Доставка</span><b id="summaryDelivery">—</b></div>
+              <div class="summary-total">
+                <span>Итого</span>
+                <strong id="summaryTotal">0 ₽</strong>
+              </div>
+            </div>
+
+            <button class="btn btn--light" id="checkoutBtn" type="button">
+              <span data-bind="order.submit">Оформить в Telegram</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+            <p class="summary-note" data-bind="order.submitNote">Откроется чат с продавцом, текст заказа уже будет вставлен.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section class="section faq" id="faq">
+      <div class="wrap faq-grid">
+        <div class="faq-copy">
+          <p class="eyebrow" data-bind="faq.eyebrow">04 — Вопросы</p>
+          <h2 class="section-title" data-bind="faq.title">Коротко о важном</h2>
+          <p class="section-text" data-bind="faq.text">Не нашли ответ? Напишите в Telegram — отвечаем моментально.</p>
+          <a class="btn btn--ghost js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10.5l5.5 2L10 19l3.5-4.5L19 17 21 3Z"/><path d="m8.5 12.5 6-4"/></svg>
+            <span>Задать вопрос</span>
+          </a>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="logo logo--footer" href="#top" aria-label="Madeleine — наверх">
+            <span class="logo-line1" data-bind="brand.logoLine1">cheesecake</span>
+            <span class="logo-line2" data-bind="brand.logoLine2">kazan</span>
+          </a>
+          <p class="footer-note" data-bind="footer.note">Десерты, которые не нужно искать повода.</p>
+          <p class="footer-city"><span data-bind="brand.city">Казань</span> · <span data-bind="delivery.hours">8:00–20:00</span>, <span data-bind="delivery.days">каждый день</span></p>
+        </div>
+
+        <div>
+          <h4>Контакты</h4>
+          <div class="footer-links">
+            <a class="js-phone-link" href="tel:+79990000000" data-bind="contacts.phoneDisplay">+7 917 222-56-54</a>
+            <a class="js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener">Telegram для заказов</a>
+            <a class="js-channel-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener" data-bind="contacts.telegramChannelLabel">@cheesecakekazan</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Информация</h4>
+          <div class="footer-links">
+            <a href="#catalog">Витрина</a>
+            <a href="#how">Как заказать</a>
+            <a href="#faq">Вопросы и доставка</a>
+            <a href="privacy.html">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> <span data-bind="brand.name">Cheesecake Kazan</span></span>
+        <span data-bind="footer.credit"></span>
+      </div>
+
+      <div class="footer-watermark" aria-hidden="true" data-bind="brand.logoLine1">cheesecake</div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar" id="mobileBar" aria-hidden="true">
+    <div>
+      <div class="mobile-bar-meta" id="mobileBarMeta">0 десертов</div>
+      <div class="mobile-bar-total" id="mobileBarTotal">0 ₽</div>
+    </div>
+    <button class="btn" id="mobileBarBtn" type="button">
+      Оформить
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+    </button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="modal" id="orderModal" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="modal-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>
+      </div>
+
+      <h2 id="modalTitle">Заказ собран</h2>
+      <p>Осталось отправить его в Telegram — текст уже готов.</p>
+
+      <pre id="orderText"></pre>
+
+      <div class="modal-actions">
+        <a class="btn btn--primary" id="tgSend" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10.5l5.5 2L10 19l3.5-4.5L19 17 21 3Z"/><path d="m8.5 12.5 6-4"/></svg>
+          Открыть Telegram
+        </a>
+        <button class="btn btn--ghost" id="copyBtn" type="button">Скопировать текст</button>
+      </div>
+
+      <p class="modal-hint">Если Telegram не открылся, скопируйте текст и вставьте его в чат вручную.</p>
+    </div>
+  </dialog>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

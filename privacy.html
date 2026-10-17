@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика конфиденциальности — Madeleine</title>
+  <meta name="description" content="Как сайт Madeleine обращается с данными покупателей.">
+  <meta name="theme-color" content="#F6F1EB">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F8F2E8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23A63D2F'%3Ec%3C/text%3E%3C/svg%3E">
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var c = window.SITE_CONFIG;
+      if (!c || !c.theme) return;
+      Object.keys(c.theme).forEach(function (k) {
+        document.documentElement.style.setProperty('--' + k.replace(/[A-Z]/g, function (m) { return '-' + m.toLowerCase(); }), c.theme[k]);
+      });
+    })();
+  </script>
+</head>
+<body class="legal-page">
+  <header class="legal-header">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Madeleine — на главную">
+        <span class="logo-line1" data-bind="brand.logoLine1">cheesecake</span>
+        <span class="logo-line2" data-bind="brand.logoLine2">kazan</span>
+      </a>
+      <a class="btn btn--ghost" href="index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="legal-main wrap">
+    <p class="eyebrow">Документы</p>
+    <h1>Политика конфиденциальности</h1>
+    <p class="legal-lead">Настоящая политика описывает, какие данные собирает сайт <span data-bind="brand.name">Cheesecake Kazan</span> и как они используются.</p>
+
+    <h2>1. Кто обрабатывает данные</h2>
+    <p>Сайт принадлежит кондитерской <span data-bind="brand.name">Cheesecake Kazan</span> (далее — «Продавец»). Связаться с Продавцом можно в Telegram <a class="js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener"><span data-bind="contacts.telegramChannelLabel">@cheesecakekazan</span></a> или по телефону <a class="js-phone-link" href="tel:+79990000000" data-bind="contacts.phoneDisplay">+7 917 222-56-54</a>.</p>
+
+    <h2>2. Какие данные собираются</h2>
+    <p>Только те, которые вы вводите в форму заказа: имя, телефон, адрес доставки, дата и время, состав заказа, надпись на торте и комментарий. Сайт не запрашивает паспортные данные и не собирает платёжную информацию.</p>
+
+    <h2>3. Зачем нужны данные</h2>
+    <p>Чтобы принять заказ, согласовать детали, связаться с вами и доставить десерты. Данные не используются для рекламных рассылок без отдельного согласия.</p>
+
+    <h2>4. Как передаются данные</h2>
+    <p>Сайт не отправляет данные на сервер и не хранит их в базе. При нажатии «Оформить в Telegram» из введённых данных формируется текст сообщения, который открывается в Telegram. Сообщение отправляется только после того, как вы нажмёте «Отправить» в Telegram. Дальнейшая обработка происходит в переписке с Продавцом.</p>
+
+    <h2>5. Cookies и локальное хранилище</h2>
+    <p>Сайт не использует рекламные cookies и системы аналитики. Выбранные десерты сохраняются в локальном хранилище браузера (localStorage), чтобы корзина не пропадала при обновлении страницы. Эти данные можно удалить, очистив данные сайта в браузере.</p>
+
+    <h2>6. Сроки и ваши права</h2>
+    <p>Данные хранятся в переписке Telegram в течение срока, необходимого для выполнения заказа и гарантийных обязательств. Вы можете запросить удаление данных, написав Продавцу в Telegram.</p>
+
+    <h2>7. Согласие</h2>
+    <p>Отмечая чекбокс в форме заказа, вы подтверждаете согласие на обработку перечисленных данных для оформления и доставки заказа.</p>
+
+    <h2>8. Изменения</h2>
+    <p>Актуальная версия политики всегда доступна на этой странице. Если правила обработки данных изменятся, мы обновим текст.</p>
+
+    <p style="margin-top: 30px;">Контакт для вопросов: <a class="js-tg-link" href="https://t.me/madeleine_demo" target="_blank" rel="noopener"><span data-bind="contacts.telegramChannelLabel">@cheesecakekazan</span></a>, телефон <a class="js-phone-link" href="tel:+79990000000" data-bind="contacts.phoneDisplay">+7 917 222-56-54</a>.</p>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="wrap">© <span id="year"></span> <span data-bind="brand.name">Cheesecake Kazan</span> · <a href="index.html">Вернуться на сайт</a></div>
+  </footer>
+
+  <script src="assets/privacy.js"></script>
+</body>
+</html>
