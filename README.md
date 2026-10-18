@@ -34,6 +34,10 @@ GitHub: его приглашают по email, он видит только р�
 менять карточки и фото. Изменения коммитятся в GitHub и автоматически
 попадают на сайт.
 
+Прямая ссылка в CMS: https://app.pagescms.org/coderrrcoffee/sweet-order-template
+
+Инструкция для клиента: [CMS.md](CMS.md).
+
 ## Как адаптировать
 
 1. Откройте `config.js`.
