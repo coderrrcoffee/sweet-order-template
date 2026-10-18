@@ -76,9 +76,18 @@
 
   // Каталог — в data/catalog.json: его редактирует клиент через Pages CMS.
   // Если JSON не загрузился (например, открыли файл напрямую через file://),
-  // берём резервный массив из config.js.
+  // берём резервную копию, которую сборка вставила в HTML.
   function loadCatalog() {
-    var fallback = Array.isArray(C.products) ? C.products : [];
+    var fallback = [];
+    var fallbackEl = document.getElementById("catalogFallback");
+    if (fallbackEl) {
+      try {
+        var parsed = JSON.parse(fallbackEl.textContent);
+        fallback = Array.isArray(parsed.products) ? parsed.products : [];
+      } catch (err) {
+        fallback = [];
+      }
+    }
     if (location.protocol === "file:") {
       C.products = fallback;
       return Promise.resolve();
@@ -95,7 +104,7 @@
         C.products = data.products;
       })
       .catch(function (err) {
-        console.warn("data/catalog.json не загрузился, использую config.js:", err);
+        console.warn("data/catalog.json не загрузился, использую резервную копию:", err);
         C.products = fallback;
       })
       .then(function () {

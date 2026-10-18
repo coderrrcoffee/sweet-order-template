@@ -1,8 +1,8 @@
 /* ============================================================
    УНИВЕРСАЛЬНЫЙ ШАБЛОН — «Madeleine»
    ------------------------------------------------------------
-   Демо-кондитерская. Меняйте тексты, товары, цены и контакты —
-   сайт подстроится автоматически. Подробности в README.md.
+   Демо-кондитерская. Меняйте бренд, тексты, контакты и цвета.
+   Товары и цены лежат в data/catalog.json (их правит CMS).
    ============================================================ */
 
 window.SITE_CONFIG = {
@@ -107,90 +107,7 @@ window.SITE_CONFIG = {
     ]
   },
 
-  products: [
-    {
-      id: "san-sebastian", category: "cheesecakes",
-      name: "Чизкейк «Сан-Себастьян»",
-      desc: "Баскский чизкейк: карамельная корочка и нежная кремовая середина.",
-      price: 2400, unit: "шт", weight: 1200, weightLabel: "1,2 кг",
-      image: "assets/photos/san-sebastian.webp",
-      badge: "Хит", badgeTone: "accent"
-    },
-    {
-      id: "cherry", category: "cheesecakes",
-      name: "Чизкейк «Вишнёвый»",
-      desc: "Сливочный чизкейк на песочной основе с густым вишнёвым соусом.",
-      price: 2500, unit: "шт", weight: 1200, weightLabel: "1,2 кг",
-      image: "assets/photos/cherry.webp"
-    },
-    {
-      id: "pistachio", category: "cheesecakes",
-      name: "Чизкейк «Фисташковый»",
-      desc: "Фисташковая паста, сливочный сыр и тонкая шоколадная основа.",
-      price: 2700, unit: "шт", weight: 1100, weightLabel: "1,1 кг",
-      image: "assets/photos/pistachio.webp"
-    },
-    {
-      id: "brownie", category: "cheesecakes",
-      name: "Брауни-чизкейк",
-      desc: "Шоколадный брауни, карамель и слой нежного сливочного чизкейка.",
-      price: 2600, unit: "шт", weight: 1200, weightLabel: "1,2 кг",
-      image: "assets/photos/brownie.webp"
-    },
-    {
-      id: "pistachio-raspberry", category: "cakes",
-      name: "Торт «Фисташка и малина»",
-      desc: "Фисташковый бисквит, малиновая начинка и сливочный крем.",
-      price: 3200, unit: "шт", weight: 1400, weightLabel: "1,4 кг",
-      image: "assets/photos/pistachio-raspberry.webp",
-      badge: "Хит", badgeTone: "accent"
-    },
-    {
-      id: "ricotta-pear", category: "cakes",
-      name: "Торт «Рикотта с грушей»",
-      desc: "Лёгкий торт на рикотте с сочной грушей и тонкой пудрой.",
-      price: 3400, unit: "шт", weight: 1300, weightLabel: "1,3 кг",
-      image: "assets/photos/ricotta-pear.webp"
-    },
-    {
-      id: "forest-berries", category: "cakes",
-      name: "Торт «Лесные ягоды»",
-      desc: "Песочная основа, сливочный крем и свежие лесные ягоды.",
-      price: 3700, unit: "шт", weight: 1500, weightLabel: "1,5 кг",
-      image: "assets/photos/forest-berries.webp"
-    },
-    {
-      id: "profiteroles", category: "pastry",
-      name: "Профитроли с фисташкой",
-      desc: "12 профитролей с фисташковым и шоколадным кремом в коробке.",
-      price: 1400, unit: "набор", weight: 480, weightLabel: "12 шт",
-      image: "assets/photos/profiteroles.webp",
-      badge: "Хит", badgeTone: "accent"
-    },
-    {
-      id: "tartlets", category: "pastry",
-      name: "Тарталетки с малиной",
-      desc: "Хрустящая песочная основа, сливочный крем и крупная малина.",
-      price: 850, unit: "набор", weight: 360, weightLabel: "4 шт",
-      image: "assets/photos/tartlets.webp"
-    },
-    {
-      id: "mini-set", category: "sets",
-      name: "Набор «Мини-праздник»",
-      desc: "Тарталетки и профитроли в подарочной коробке — удобно взять с собой.",
-      price: 2800, unit: "набор", weight: 900, weightLabel: "12 десертов",
-      image: "assets/photos/mini-set.webp",
-      badge: "Подарок", badgeTone: "green"
-    },
-    {
-      id: "mega-assorti", category: "sets",
-      name: "Мега-ассорти чизкейков",
-      desc: "2 кг чизкейков разных вкусов — на большой праздник или офис.",
-      price: 4500, unit: "набор", weight: 2000, weightLabel: "2 кг",
-      image: "assets/photos/mega-assorti.webp",
-      badge: "Для праздника", badgeTone: "green"
-    }
-  ],
+  // Товары — в data/catalog.json: их редактирует клиент через Pages CMS.
 
   steps: {
     eyebrow: "02 — Как заказать",
