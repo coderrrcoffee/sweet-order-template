@@ -12,7 +12,7 @@ window.SITE_CONFIG = {
     description: "Чизкейки, торты и пирожные ручной работы. Собираем заказ под ваш повод и привозим в день обращения. Бесплатная доставка по Москве.",
     themeColor: "#F6F1EB",
     ogImage: "assets/photos/og-template.jpg",
-    siteUrl: "",
+    siteUrl: "https://coderrrcoffee.github.io/sweet-order-template",
     priceRange: "850–4 500 ₽"
   },
 
