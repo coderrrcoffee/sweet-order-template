@@ -239,10 +239,5 @@ window.SITE_CONFIG = {
   footer: {
     note: "Десерты, которые говорят за вас.",
     credit: "Демо-шаблон · замените контакты на свои"
-  },
-
-  orderMessage: {
-    intro: "Новый заказ с сайта",
-    numberPrefix: "MD"
   }
 };

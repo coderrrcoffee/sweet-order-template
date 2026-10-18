@@ -680,13 +680,7 @@
     }).format(date).replace(",", "");
   }
 
-  function makeOrderNumber() {
-    var now = new Date();
-    var prefix = (C.orderMessage && C.orderMessage.numberPrefix) || "ORD";
-    return prefix + "-" + pad(now.getDate()) + pad(now.getMonth() + 1) + "-" + (Math.floor(Math.random() * 90) + 10);
-  }
-
-  function buildOrderText(number) {
+  function buildOrderText() {
     var ids = cartIds();
     var itemsTotal = cartItemsTotal();
     var total = itemsTotal + deliveryCost(itemsTotal);
@@ -702,9 +696,6 @@
     var phone = phoneInput ? phoneInput.value.trim() : "";
 
     var lines = [];
-    lines.push("🍰 " + (C.orderMessage.intro || "Новый заказ с сайта") + " " + C.brand.name);
-    lines.push("№ " + number);
-    lines.push("");
     lines.push("👤 Имя: " + name);
     lines.push("📞 Телефон: " + phone);
     lines.push("📅 " + (isPickup ? "Самовывоз" : "Доставка") + ": " + date + ", " + slot);
@@ -740,7 +731,7 @@
     var modal = $("#orderModal");
     if (!modal) return;
 
-    currentOrderText = buildOrderText(makeOrderNumber());
+    currentOrderText = buildOrderText();
     var orderText = $("#orderText");
     if (orderText) orderText.textContent = currentOrderText;
     var tgSend = $("#tgSend");
