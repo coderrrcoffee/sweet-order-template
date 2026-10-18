@@ -41,6 +41,7 @@ content:
           - name: unit
             label: Единица
             type: select
+            required: true
             options:
               values:
                 - name: шт
@@ -50,6 +51,7 @@ content:
           - name: category
             label: Категория
             type: select
+            required: true
             options:
               values:
                 - name: cheesecakes
@@ -63,6 +65,7 @@ content:
           - name: image
             label: Фото
             type: image
+            required: true
             options:
               media: photos
               path: assets/photos
