@@ -1,0 +1,85 @@
+media:
+  - name: photos
+    label: Фото десертов
+    input: assets/photos
+    output: assets/photos
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+content:
+  - name: catalog
+    label: Витрина
+    type: file
+    path: data/catalog.json
+    fields:
+      - name: products
+        label: Десерты
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Код карточки (не менять)
+            type: string
+            required: true
+          - name: name
+            label: Название
+            type: string
+            required: true
+          - name: desc
+            label: Описание
+            type: text
+          - name: price
+            label: Цена, ₽
+            type: number
+            required: true
+          - name: weight
+            label: Вес, граммы
+            type: number
+          - name: weightLabel
+            label: Вес на карточке
+            type: string
+          - name: unit
+            label: Единица
+            type: select
+            options:
+              values:
+                - name: шт
+                  label: шт
+                - name: набор
+                  label: набор
+          - name: category
+            label: Категория
+            type: select
+            options:
+              values:
+                - name: cheesecakes
+                  label: Чизкейки
+                - name: cakes
+                  label: Торты
+                - name: pastry
+                  label: Пирожные
+                - name: sets
+                  label: Наборы
+          - name: image
+            label: Фото
+            type: image
+            options:
+              media: photos
+              path: assets/photos
+              extensions: [jpg, jpeg, png, webp]
+          - name: badge
+            label: Плашка (необязательно)
+            type: string
+          - name: badgeTone
+            label: Цвет плашки
+            type: select
+            options:
+              values:
+                - name: accent
+                  label: Терракота
+                - name: green
+                  label: Олива
+          - name: available
+            label: Показывать на сайте
+            type: boolean
+            default: true

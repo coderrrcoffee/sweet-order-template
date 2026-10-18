@@ -71,7 +71,38 @@
   }
 
   function productById(id) {
-    return C.products.filter(function (p) { return p.id === id; })[0];
+    return (C.products || []).filter(function (p) { return p.id === id; })[0];
+  }
+
+  // Каталог — в data/catalog.json: его редактирует клиент через Pages CMS.
+  // Если JSON не загрузился (например, открыли файл напрямую через file://),
+  // берём резервный массив из config.js.
+  function loadCatalog() {
+    var fallback = Array.isArray(C.products) ? C.products : [];
+    if (location.protocol === "file:") {
+      C.products = fallback;
+      return Promise.resolve();
+    }
+    return fetch("data/catalog.json", { cache: "no-store" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.products) || !data.products.length) {
+          throw new Error("Пустой каталог");
+        }
+        C.products = data.products;
+      })
+      .catch(function (err) {
+        console.warn("data/catalog.json не загрузился, использую config.js:", err);
+        C.products = fallback;
+      })
+      .then(function () {
+        C.products = (C.products || []).filter(function (p) {
+          return p && p.id && p.name && p.available !== false;
+        });
+      });
   }
 
   /* ── Иконки для динамических блоков ─────────────────────── */
@@ -91,7 +122,7 @@
   /* ── Состояние ─────────────────────────────────────────── */
 
   var STORAGE_KEY = "sweet-order-cart-v1";
-  var cart = loadCart();
+  var cart = {};
   var activeCategory = "all";
   var orderInView = false;
   var currentOrderText = "";
@@ -103,7 +134,8 @@
       var result = {};
       Object.keys(raw).forEach(function (id) {
         var qty = parseInt(raw[id], 10);
-        if (productById(id) && qty > 0) result[id] = Math.min(99, qty);
+        var product = productById(id);
+        if (product && product.available !== false && qty > 0) result[id] = Math.min(99, qty);
       });
       return result;
     } catch (err) {
@@ -116,7 +148,9 @@
   }
 
   function cartIds() {
-    return C.products.filter(function (p) { return cart[p.id]; }).map(function (p) { return p.id; });
+    return (C.products || []).filter(function (p) {
+      return cart[p.id] && p.available !== false;
+    }).map(function (p) { return p.id; });
   }
 
   function cartCount() {
@@ -300,8 +334,8 @@
   function renderCatalog(animate) {
     var grid = $("#catalogGrid");
     if (!grid) return;
-    var list = C.products.filter(function (p) {
-      return activeCategory === "all" || p.category === activeCategory;
+    var list = (C.products || []).filter(function (p) {
+      return p.available !== false && (activeCategory === "all" || p.category === activeCategory);
     });
     grid.innerHTML = list.map(function (p, i) { return cardHtml(p, i); }).join("");
     grid.classList.remove("is-fresh");
@@ -932,8 +966,42 @@
 
   /* ── Инициализация ─────────────────────────────────────── */
 
-  function init() {
+  function updateJsonLd() {
+    var script = document.querySelector('script[type="application/ld+json"]');
+    if (!script || !C.products) return;
+    try {
+      var data = JSON.parse(script.textContent);
+      var baseUrl = String((C.meta && C.meta.siteUrl) || "").replace(/\/$/, "");
+      data.hasOfferCatalog = {
+        "@type": "OfferCatalog",
+        name: "Десерты",
+        itemListElement: C.products.map(function (p, i) {
+          return {
+            "@type": "Offer",
+            position: i + 1,
+            price: p.price,
+            priceCurrency: "RUB",
+            availability: "https://schema.org/InStock",
+            itemOffered: {
+              "@type": "Product",
+              name: p.name,
+              description: p.desc,
+              ...(baseUrl && p.image ? { image: baseUrl + "/" + p.image } : {})
+            }
+          };
+        })
+      };
+      script.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+      // Если статический JSON-LD не распарсился — не ломаем витрину.
+    }
+  }
+
+  async function init() {
     bindConfig();
+    await loadCatalog();
+    cart = loadCart();
+    updateJsonLd();
     renderHeroStats();
     renderMarquee();
     renderTrust();
